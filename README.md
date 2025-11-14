@@ -1,28 +1,55 @@
-# LFR 2.0
-# ESP32 DC Motor Control with L298N
+Line Follower Robot (LFR)
 
-This project shows how to control a DC motor using an ESP32 and an L298N motor driver.
+🛠️ Components List:
+Mini Mega 2560 Pro
+N20 Motor with Encoder (2 ta)
+L298N Motor Driver
+OLED Display (0.96")
+LiPo Battery (3S 1200mAh)
+Motor Wheel (2 ta)
+Ball Caster
+Motor Mounting Bracket
+Push Button (3 ta)
+IR Sensor (8 ta)
+PCB Board
 
-## Features
-- Control motor direction (forward and backward)
-- Control motor speed with PWM
-- Serial output to monitor motor status
+🔌 Wiring Connection:
 
-## Hardware Needed
-- ESP32 board
-- L298N motor driver
-- DC motor
-- Power supply for motor
-- Wires
+Motor Driver:
+ain1 = 7
+ain2 = 6  
+bin1 = 9
+bin2 = 10
+pwma = 5
+pwmb = 4
 
-## Connections
-| ESP32 Pin | L298N Pin | Purpose          |
-|-----------|-----------|------------------|
-| GPIO 27   | IN1       | Motor direction  |
-| GPIO 26   | IN2       | Motor direction  |
-| GPIO 14   | ENA       | PWM speed control|
+Button:
+rbtn_l = 3 (Stop)
+rbtn_h = 2 (Start) 
+lbtn = 11 (Calibrate)
 
-## How to Use
+IR Sensor:
+A0, A2, A4, A6, A8, A10, A12, A14
+
+🚀 How to Run:
+Code Upload by Arduino IDE
+Sensor Calibrate : Left white button press.
+Start : Left red high button press.
+Stop koro: Right button press.
+
+⚙️ PID Settings:
+Kp = 42
+Kd = 5.0
+Ki = 1.0
+Base Speed = 120
+
+🔧 Library use:
+1.#include <SPI.h>
+2.#include <Wire.h>
+3.#include <Adafruit_GFX.h>
+4.#include <Adafruit_SH110X.h>
+
+##Code
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
