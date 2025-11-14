@@ -49,6 +49,12 @@ Base Speed = 120
 3.#include <Adafruit_GFX.h>
 4.#include <Adafruit_SH110X.h>
 
+
+
+
+
+
+
 ##Code
 #include <SPI.h>
 #include <Wire.h>
